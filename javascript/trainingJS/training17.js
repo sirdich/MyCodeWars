@@ -18,18 +18,25 @@
 //   }
 // }
 
+//best practice from codewars
 function firstToLast(str, c) {
-  var result = [];
-
-  result.push(str.indexOf(c));
-  result.push(str.lastIndexOf(c));
-
-  if (result[0] === -1) {
-    return -1;
-  }
-
-  return Math.floor(result[1] - result[0]);
+  var first = str.indexOf(c),
+    last = str.lastIndexOf(c);
+  return first == -1 ? -1 : last - first;
 }
+
+// function firstToLast(str, c) {
+//   var result = [];
+
+//   result.push(str.indexOf(c));
+//   result.push(str.lastIndexOf(c));
+
+//   if (result[0] === -1) {
+//     return -1;
+//   }
+
+//   return (result[1] - result[0]);
+// }
 
 console.log(firstToLast('ababc', 'c'));
 
