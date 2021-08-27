@@ -1,5 +1,7 @@
 //https://www.codewars.com/kata/57274562c8dcebe77e001012
 
+const assert = require('assert');
+
 function cutIt(arr) {
   var shortest = findShort(arr);
 
@@ -17,6 +19,14 @@ function findShort(arr) {
   }
   return shortest;
 }
+
+describe('Array', function () {
+  it('should return -1 when the value is not present', function () {
+    assert.assertSimilar(cutIt(['codewars', 'javascript', 'java']), ['code', 'java', 'java']);
+    assert.assertSimilar(cutIt(['ab', 'cde', 'fgh']), ['ab', 'cd', 'fg']);
+    assert.assertSimilar(cutIt(['abc', 'defgh', 'ijklmn']), ['abc', 'def', 'ijk']);
+  });
+});
 
 // console.log(cutIt(['ab', 'cde', 'fgh']));
 // console.log(cutIt(['abc', 'defgh', 'ijklmn']));
